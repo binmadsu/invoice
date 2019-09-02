@@ -1,0 +1,160 @@
+<!---------footer---------->
+
+<?php $urlCont =$this->router->fetch_class(); ?>
+<?php $url =$this->router->fetch_class()."/".$this->router->fetch_method();?>
+<!--footer start-->
+      <footer class="site-footer">
+          <div class="text-center">
+              <?php echo date('Y'); ?> - Shuttle Storage
+			  <ul class="fmenu">
+			  <li><a  href="<?php echo base_url(); ?>registration" <?php if($url=="registration") echo "class='white_class'" ?> >Registration</a></li>
+			  <li><a  href="<?php echo base_url(); ?>login" <?php if($url=="login") echo "class='white_class'" ?> >Login</a></li>
+			  <li><a  href="<?php echo base_url(); ?>pages/pricing" <?php if($url=="pages/pricing") echo "class='white_class'" ?> >Pricing</a></li>
+			  <li><a  href="<?php echo base_url(); ?>pages/how-it-works" <?php if($url=="pages/how-it-works") echo "class='white_class'" ?> >How it Works</a></li>
+			  <li><a  href="<?php echo base_url(); ?>pages/faq" <?php if($url=="pages/faq") echo "class='white_class'" ?> >Faq</a></li>
+			  <li><a  href="<?php echo base_url(); ?>pages/about" <?php if($url=="pages/about") echo "class='white_class'" ?> >About</a></li>
+			  </ul>
+              <a href="#" class="go-top">
+                  <i class="fa fa-angle-up"></i>
+              </a>
+          </div>
+      </footer>
+      <!--footer end-->
+  </section>
+  <div style="display: none;">
+	<div id="inline1" style="width:900px;height:400px;padding:10px; background:#fff;">
+		<span class="button b-close"><span>X</span></span>
+		<div class="panel clearfix">
+			<h1></h1>
+			
+		</div>
+	</div>
+</div>
+    <?php $this->load->view('js'); ?>
+  </body>
+</html>
+
+<!--------------header---------------------->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title>Shuttle Storage</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="<?php echo base_url(); ?>assets/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="<?php echo base_url(); ?>assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/js/gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/lineicons/style.css">    
+    
+    <!-- Custom styles for this template -->
+    <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/style-responsive.css" rel="stylesheet">
+    <!--added by sudhir for datepicker--> 
+    <link href="<?php echo base_url(); ?>assets/css/jquery-ui_datepicker.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+  <section id="container" >
+      <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+      <!--header start-->
+      <header class="header black-bg">
+              <div class="sidebar-toggle-box">
+                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+              </div>
+            <!--logo start-->
+            <a href="<?php echo base_url(); ?>" class="logo"><img src="<?php echo base_url(); ?>assets/img/logo.png" class="img-circle"></a>
+            <!--logo end-->
+          
+            <div class="top-menu">
+            	<ul class="nav pull-right top-menu">
+                    <li><a class="logout" href="<?php echo base_url();?>logout">Logout</a></li>
+            	</ul>
+            </div>
+        </header>
+      <!--header end-->
+      
+                                               <!--ajax model div-->
+						<div class="modal fade" id="ajazResponseModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title" id="myModalLabel">&nbsp;</h4>
+						      </div>
+							<div class="modal-body" id="ajaxResponseDiv">
+						        
+						        </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						        
+						      </div>
+						    </div>
+						  </div>
+						</div>  
+                                             <!--end ajax model div-->
+
+
+											 
+			
+<!------------------------page content------------------>
+			
+<?php $this->load->view('header');
+      $this->load->view('right-sidebar');
+?>  
+
+ <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+          	<h3><i class="fa fa-angle-right"></i> <?php echo $pageData->page_title; ?></h3>
+          	
+          	<!-- BASIC FORM ELELEMNTS -->
+          	<div class="row mt">
+          		<div class="col-lg-12">
+                  <div class="form-panel">
+                  
+		 
+                          <div class="form-group">
+                             <?php echo $pageData->page_content; ?>
+                          </div>
+			  
+                  </div>
+          		</div><!-- col-lg-12-->      	
+          	</div><!-- /row -->
+          
+		</section><! --/wrapper -->
+      </section><!-- /MAIN CONTENT -->
+
+
+<!--main content end-->
+     <?php 
+      $this->load->view('footer');
+     ?>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/common/jquery.validate.js"></script>
+<script>
+$().ready(function() {
+	// validate signup form on keyup and submit
+	$("#user-form").validate({
+	});
+});
+</script>

@@ -1,0 +1,1 @@
+</div><!-- mainpanel --><?php $this->load->view('admin/js'); ?></body></html>
